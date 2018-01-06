@@ -6,6 +6,4 @@ def missing_number(array)
   end
 end
 
-array = [1, 8, 3, 4, 6, 2, 5, 9]
 
-puts missing_number(array)
