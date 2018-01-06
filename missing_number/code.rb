@@ -1,9 +1,10 @@
 def missing_number(array)
-  array.sort!
-  return 1 if array[0] != 1
-  array.each_with_index do |num, i|
-    return num + 1 if num + 1 != array[i + 1]
+  number = array.reduce do |sum, n|
+    sum + n
   end
+  array.sort!
+  ideal_number = (array[0]..array[-1]).to_a.reduce do |sum, n|
+    sum + n
+  end
+  ideal_number - number
 end
-
-
