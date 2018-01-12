@@ -1,13 +1,9 @@
 let reverse_order = (string) => {
   let array = string.split(' ');
 
-  let newArray = [];
-  let lastElementIndex = array.length - 1
-
-  for(let i = 0; i < array.length; i++) {
-    newArray.push(array[lastElementIndex]);
-    lastElementIndex--;
+  for(let i = 0, a = array.length -1; i < a; i++, a--) {
+    [array[i], array[a]] = [array[a], array[i]];
   }
 
-  return newArray.join(" ");
+  return array.join(" ");
 }
