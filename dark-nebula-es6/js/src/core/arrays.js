@@ -1,5 +1,8 @@
 removeWithoutCopy = (arr, item) => {
-
+  for(let i in arr){
+    while(arr[i] == item) arr.splice(i,1);
+  }
+  return arr;
 };
 
 append = (arr, item) => {
@@ -33,7 +36,13 @@ insert = (arr, item, index) => {
 }
 
 count = (arr, item) => {
-  
+  let sum = 0;
+  for(let i = 0, a = arr.length -1; i < a; i++) {
+    if (arr[i] === item) {
+      sum += 1;
+    }
+  }
+  return sum;
 };
 
 duplicates = (arr) => {
@@ -41,7 +50,10 @@ duplicates = (arr) => {
 };
 
 square = (arr) => {
-
+  for(let i = 0, a = arr.length; i < a; i++) {
+    arr[i] = arr[i] * arr[i];
+  }
+  return arr;
 };
 
 findAllOccurrences = (arr, item) => {
